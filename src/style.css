@@ -67,16 +67,22 @@ button {
 
 .form button i {
   color: green;
-  font-size: 23px;
+  font-size: 18px;
 }
 
 .delete {
-  font-size: 23px;
+  font-size: 18px;
+  border: none;
+}
+
+.edit {
+  font-size: 18px;
   border: none;
 }
 
 .form button i:hover,
-.delete:hover {
+.delete:hover,
+.edit:hover {
   transform: scale(0.9);
 }
 
@@ -94,10 +100,6 @@ button {
   align-items: center;
 }
 
-/* .listsdiv input[type="text"] {
-  width: 100%;
-  margin: 10px;
-} */
 .listsdiv p {
   width: 100%;
   margin: 10px;
@@ -114,4 +116,13 @@ input[type="checkbox"] {
 
 .delete:hover {
   color: brown;
+}
+
+.edit:hover {
+  color: green;
+}
+
+.btn-div {
+  display: flex;
+  gap: 20px;
 }

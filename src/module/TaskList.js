@@ -5,6 +5,7 @@ class TaskList {
     this.planned = planned;
     this.todoInput = todoInput;
     this.todoBtn = todoBtn;
+    this.editIndex = -1;
   }
 
   render = () => {
@@ -18,9 +19,15 @@ class TaskList {
       const icons = document.createElement('i');
       icons.className = 'fa-solid fa-trash delete';
       listBtn.appendChild(icons);
+      const editBtn = document.createElement('button');
+      const editIcons = document.createElement('i');
+      editIcons.className = 'fa-solid fa-pen edit';
+      editBtn.appendChild(editIcons);
+      const btnDiv = document.createElement('div');
+      btnDiv.append(editBtn, listBtn);
+      btnDiv.className = 'btn-div';
       const div = document.createElement('div');
       div.className = 'listsdiv';
-      // listBtn.innerText = "Remove";
       check.type = 'checkbox';
       descriptionInput.innerText = `${task.description}`;
       if (task.completed) {
@@ -39,18 +46,30 @@ class TaskList {
         Tasks.removeTask(index);
         this.render();
       });
-
-      div.append(check, descriptionInput, listBtn);
+      editBtn.addEventListener('click', () => {
+        this.editIndex = index;
+        this.todoInput.value = task.description;
+        this.todoBtn.innerHTML = '<i class=\'fa-solid fa-pen edit\'></i>';
+      });
+      div.append(check, descriptionInput, btnDiv);
       taskList.append(div);
       this.planned.appendChild(taskList);
     });
+    this.todoInput.value = '';
+    this.todoBtn.innerHTML = '<i class="fa-sharp fa-solid fa-arrow-right-to-bracket"></i>';
+    this.editIndex = -1;
   }
 
   init = () => {
     this.render();
     this.todoBtn.addEventListener('click', () => {
       if (this.todoInput.value.trim() !== '') {
-        Tasks.addTask(this.todoInput.value);
+        if (this.editIndex === -1) {
+          Tasks.addTask(this.todoInput.value);
+        } else {
+          Tasks.editTask(this.editIndex, this.todoInput.value);
+          this.editIndex = -1;
+        }
         this.todoInput.value = '';
         this.render();
       }
