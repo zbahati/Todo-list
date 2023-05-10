@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-  <h3><b>WEBPACK  PROJECT</b></h3>
+  <h3><b>TODO LIST  PROJECT</b></h3>
 
 </div>
 
@@ -30,11 +30,10 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [WEBPACK PROJECT] <a name="about-project"></a>
+# 📖 [Todo List PROJECT] <a name="about-project"></a>
 
 **[WEBPACK Project]**
-  The WEBPACK PROJECT is a simple folders and files that created to test the perfomance and working of webpack packages using package manager  named npm, this project is done to initialize the project with webpack for any one two start working on the project using the tools without install this package, because is somehow difficult, so feel free to use this package when ever you are starting a new project that require to use webpack.
-
+  The Todo list with Webpack installed in it for the better performance while in develpment even in production mode, because all functionality are emprimented in here. This Todo list is anAdvanced one that Working with Modules for file enterchangable and best practice in using ES6.
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -46,7 +45,7 @@
   <ul>
     <li><a href="">HTML5</a></li>
     <li><a href="">CSS3</a></li>
-    <li><a href="">Modern JavaScript </a></li>
+    <li><a href="">Modern JavaScript ES6 modules</a></li>
   </ul>
 </details>
 
@@ -74,6 +73,10 @@
 - **[add dev-server using webpack to watch changes ]**
 - **[add webpack.config.js that helps to make some configuration to the project]**
 - **[add css-loader package]**
+- **[Add to list to the List ]**
+- **[Remove to Item to the List ]**
+- **[Save The list to the local storage ]**
+- **[Update the list from local storage]**
 
 
 

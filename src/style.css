@@ -43,7 +43,7 @@ input {
   outline: none;
 }
 
-form {
+.form {
   width: 100%;
   display: flex;
   gap: 20px;
@@ -51,13 +51,39 @@ form {
   border: 1px solid rgb(203, 202, 202);
 }
 
-form input {
+.form input {
   width: 90%;
   padding: 12px;
 }
 
-form button {
-  width: 20%;
+button {
+  border: none;
+}
+
+.form button {
+  width: 8%;
+  background-color: transparent;
+}
+
+.form button i {
+  color: green;
+  font-size: 18px;
+}
+
+.delete {
+  font-size: 18px;
+  border: none;
+}
+
+.edit {
+  font-size: 18px;
+  border: none;
+}
+
+.form button i:hover,
+.delete:hover,
+.edit:hover {
+  transform: scale(0.9);
 }
 
 #tasks_lists {
@@ -74,7 +100,7 @@ form button {
   align-items: center;
 }
 
-.listsdiv input[type="text"] {
+.listsdiv p {
   width: 100%;
   margin: 10px;
 }
@@ -82,4 +108,21 @@ form button {
 input[type="checkbox"] {
   width: 10%;
   height: 20px;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.delete:hover {
+  color: brown;
+}
+
+.edit:hover {
+  color: green;
+}
+
+.btn-div {
+  display: flex;
+  gap: 20px;
 }
