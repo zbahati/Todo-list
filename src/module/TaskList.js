@@ -1,16 +1,27 @@
 import Tasks from './Tasks.js';
 
 class TaskList {
-  constructor(planned, todoInput, todoBtn) {
+  constructor(planned, todoInput, todoBtn, clearCompletedBtn) {
     this.planned = planned;
     this.todoInput = todoInput;
     this.todoBtn = todoBtn;
+    this.clearCompletedBtn = clearCompletedBtn;
     this.editIndex = -1;
   }
 
   render = () => {
     this.planned.innerHTML = '';
     const sortedTasks = Tasks.getSortedTasks();
+    if (sortedTasks.length === 0) {
+      this.clearCompletedBtn.style.display = 'none';
+      const message = document.createElement('button');
+      message.className = 'message';
+      message.textContent = 'What is your task Today?';
+      this.planned.appendChild(message);
+      return;
+    }
+    this.clearCompletedBtn.style.display = 'block';
+
     sortedTasks.forEach((task, index) => {
       const taskList = document.createElement('li');
       const check = document.createElement('input');
@@ -34,6 +45,7 @@ class TaskList {
         descriptionInput.classList.add('line-through');
         check.checked = true;
       }
+
       check.addEventListener('change', () => {
         Tasks.toggleTaskCompleted(index);
         if (task.completed) {
@@ -42,19 +54,23 @@ class TaskList {
           descriptionInput.classList.remove('line-through');
         }
       });
+
       listBtn.addEventListener('click', () => {
         Tasks.removeTask(index);
         this.render();
       });
+
       editBtn.addEventListener('click', () => {
         this.editIndex = index;
         this.todoInput.value = task.description;
         this.todoBtn.innerHTML = '<i class=\'fa-solid fa-pen edit\'></i>';
       });
+
       div.append(check, descriptionInput, btnDiv);
       taskList.append(div);
       this.planned.appendChild(taskList);
     });
+
     this.todoInput.value = '';
     this.todoBtn.innerHTML = '<i class="fa-sharp fa-solid fa-arrow-right-to-bracket"></i>';
     this.editIndex = -1;
@@ -73,6 +89,12 @@ class TaskList {
         this.todoInput.value = '';
         this.render();
       }
+    });
+
+    this.clearCompletedBtn.addEventListener('click', () => {
+      Tasks.tasks = Tasks.tasks.filter((tasks) => !tasks.completed);
+      Tasks.saveData();
+      this.render();
     });
   }
 }
