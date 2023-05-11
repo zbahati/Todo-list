@@ -33,6 +33,27 @@ main {
   font-size: 22px;
 }
 
+#clear-completed-btn {
+  border: 1px solid rgb(210, 210, 210);
+  width: 100%;
+  padding: 14px;
+  font-size: 20px;
+}
+
+#clear-completed-btn:hover {
+  transform: scale(0.9);
+  background-color: rgb(118, 2, 2);
+  color: white;
+}
+
+.message {
+  border: 1px solid rgb(210, 210, 210);
+  width: 100%;
+  padding: 14px;
+  font-size: 13px;
+  font-style: italic;
+}
+
 .tasks_input {
   width: 100%;
 }
@@ -54,6 +75,11 @@ input {
 .form input {
   width: 90%;
   padding: 12px;
+}
+
+.form input::placeholder {
+  font-size: 14px;
+  font-style: italic;
 }
 
 button {
