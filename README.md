@@ -89,7 +89,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
- <p><a href="#">DEMO COMMING SOON  </a></p>
+ <p><a href="https://zbahati.github.io/Todo-list/dist/"> LIVE DEMO </a></p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
