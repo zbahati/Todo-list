@@ -156,6 +156,11 @@ You can deploy this project using: github page's
 - GitHub: [zbahati](https://github.com/zbahati)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/zirimwabagabo-bahati)
 
+👤 **Katende David**
+
+- GitHub: [Katended](https://github.com/Katended)
+- LinkedIn: [LinkedIn](linkedin.com/in/katende-david)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
