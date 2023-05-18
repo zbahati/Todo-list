@@ -27,6 +27,11 @@ const taskManager = {
     return tasks;
   },
 
+  updateUI: (task) => {
+    tasks.push(task);
+    return tasks;
+  },
+
   removeTaskById: (id) => {
     const tasksLeft = tasks.filter((task) => task.id !== id);
     tasksLeft.forEach((task, index) => {
