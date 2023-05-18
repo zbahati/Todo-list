@@ -8,9 +8,10 @@ class Task {
 
 const Tasks = {
   tasks: JSON.parse(localStorage.getItem('tasks')) || [],
+  storage: localStorage,
 
   saveData: () => {
-    localStorage.setItem('tasks', JSON.stringify(Tasks.tasks));
+    Tasks.storage.setItem('tasks', JSON.stringify(Tasks.tasks));
   },
 
   addTask: (description) => {
@@ -42,4 +43,4 @@ const Tasks = {
   getSortedTasks: () => Tasks.tasks.sort((a, b) => a.index - b.index),
 };
 
-export default Tasks;
+export { Task, Tasks };
