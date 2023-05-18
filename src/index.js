@@ -1,5 +1,5 @@
 import './style.css';
-import { Tasks } from './module/tasks.js';
+import { Tasks } from './module/tasks';
 
 const planned = document.querySelector('#tasks_lists');
 const todoInput = document.querySelector('#todo_input');
