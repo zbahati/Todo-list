@@ -1,5 +1,4 @@
-
-import taskManager from './localstorage';
+import taskManager from './localstorage.js';
 
 describe('Testing ', () => {
   describe('Add Task Test', () => {

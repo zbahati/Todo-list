@@ -1,4 +1,3 @@
-
 const tasks = [];
 
 const taskManager = {

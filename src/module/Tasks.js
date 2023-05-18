@@ -1,5 +1,3 @@
-// tasks.js
-
 class Task {
   constructor(description, completed, index) {
     this.description = description;
