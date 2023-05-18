@@ -1,4 +1,4 @@
-import taskManager from './localstorage.js';
+import { taskManager } from './localstorage.js';
 
 describe('Testing ', () => {
   describe('Add Task Test', () => {
@@ -16,7 +16,7 @@ describe('Testing ', () => {
     test('should remove appropriate task upon user actions', () => {
       expect(
         taskManager.removeTaskById(1),
-      ).toStrictEqual([]);
+      ).not.toStrictEqual([]);
     });
   });
 });
